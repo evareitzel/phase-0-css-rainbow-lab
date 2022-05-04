@@ -13,15 +13,14 @@ we do it we're going to learn about HTML elements, CSS styling, CSS selectors,
 how color works in CSS and importing style sheets.
 
 Before we start, here's some basic info about HTML and CSS. Skip to
-[Make a Rainbow](#make-a-rainbow) if you feel comfortable enough with HTML and
-CSS.
+[Make a CSS Rainbow](#make-a-rainbow) if you feel comfortable enough with HTML
+and CSS.
 
 ## Getting Started
 
 Fork and clone this lesson into your local environment. Navigate into its
 directory in the terminal, then run `code .` to open the files in Visual Studio
-Code. Finally, run `bundle` to install the lab's dependencies. Run `rspec` as
-you work to see your test progress.
+Code. Run `learn test` as you work to see your test progress.
 
 ## Review HTML Basics
 
@@ -42,7 +41,8 @@ elements for guidance.
   - Must begin with a letter A-Z or a-z.
   - Can be followed by: letters (`A-Za-z`), digits (`0-9`), hyphens (`-`), and
     underscores (`_`).
-  - IDs **can** only be used once per page. E.g.: `<div id="this-special-div"></div>`.
+  - IDs **can** only be used once per page. E.g.:
+    `<div id="this-special-div"></div>`.
   - Classes can be used as many times as you want. E.g.:
     `<div class="a-less-special-div"></div>`.
 - Elements nested inside other elements are called children.
@@ -92,7 +92,7 @@ Here's an example of CSS styling:
 } /* all elements will have red font */
 ```
 
-## Make a CSS Rainbow <a href="#make-a-rainbow"></a>
+## <a id="make-a-rainbow"></a> Make a CSS Rainbow 
 
 In the directory, you'll see three files: `index.html`, `main.css`, and this
 file, `README.md`. Open `index.html`.
@@ -115,26 +115,25 @@ Let's fix this by adding the style sheet to the `head`:
 
 ```html
 <head>
-  ...
-  <link rel="stylesheet" type="text/css" href="main.css" />
-  ...
+  <title>My Little Rainbow</title>
+  <link rel="stylesheet" type="text/css" href="./main.css" />
 </head>
 ```
 
 `Link` is a self-closing tag that will create a relative path with the `href`
-attribute. A relative path means the browser knows that the `main.css` file is
-in the same place as `index.html`. The `head` is a hidden part of the page that
-tells the browser where to find any other files it needs to display the page
-correctly, the `title` for the tab, and any other possible important
-information.
+attribute. A relative path `./main.css` means the browser knows that the
+`main.css` file is in the same place as `index.html`. The `head` is a hidden
+part of the page that tells the browser where to find any other files it needs
+to display the page correctly, the `title` for the tab, and any other possible
+important information.
 
 Now if you refresh the `index.html` page in your browser you should see a
-perfectly [Goth][goth] solid-black rainbow.
+perfectly solid-black rainbow.
 
 We got the basic outline because in the `main.css` all the `div` elements were
 selected and given a `border` whose color is `#000`, "black." While we could set
-`color: red;`, we will have more colors available if we define colors without
-words.
+`border-top-color: red;`, we will have more colors available if we define colors
+without words.
 
 Instead of `red`, `green`, or the exotic `tomato`, professionals prefer a set of
 numbers with a base pair of 16 rather than a base pair of 10 like we use every
@@ -166,9 +165,9 @@ same for each digit. So `#11dd99` can be written as `#1d9`.
 
 ### Coloring the Rainbow
 
-To get ROYGBIV onto our rainbow we'll need seven hex colors. Red:
-`#f00`; Orange: `#ffa500`; Yellow: `#ff0`; Green: `#00bc3f`; Blue: `#06f`;
-Indigo: `#8a2be2`; Violet: `#d300c9`
+To get ROYGBIV onto our rainbow we'll need seven hex colors. Red: `#f00`;
+Orange: `#ffa500`; Yellow: `#ff0`; Green: `#00bc3f`; Blue: `#06f`; Indigo:
+`#8a2be2`; Violet: `#d300c9`
 
 All we have to do next is select each div individually and apply each of those
 colors. That is a perfect use for ids since they're meant to style one specific
@@ -191,29 +190,13 @@ mark its color as red.
 ```
 
 To make sure the rainbow isn't so monochromatic you now need to repeat the above
-steps with the final six colors, and when you do you should have
-[a complete, colorful rainbow](http://i0.kym-cdn.com/photos/images/original/000/118/087/2468904593_6a7c692ab6.jpg).
+steps with the final six colors, and when you do you should have a complete,
+colorful rainbow.
 
 ## Moving On
 
-When you're done with this lab type `rspec` to confirm you've passed all the
+When you're done with this lab type `learn test` to confirm you've passed all the
 tests.
-
-## Saving Your Work Remotely
-
-Currently, the work you've done on this assignment is only on your local
-machine. To preserve work on your GitHub fork, you will need to stage the
-changes you've made, commit them, and push the commit up to GitHub. Use the
-following commands to do this:
-
-```console
-$ git add .
-$ git commit -m "Completed assignment"
-$ git push
-```
-
-If you visit your fork on GitHub, you should now see that _you've_ made the most
-recent commit, and your solution will be present in the files.
 
 ## Conclusion
 
